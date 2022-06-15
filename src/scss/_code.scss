@@ -1,0 +1,27 @@
+@mixin style-card ($p-tb, $p-rl, $bg-color){
+    padding: $p-tb $p-rl;
+    background-color: $bg-color;
+}
+
+@mixin text($f-size, $color, $f-weight) {
+    font-size: $f-size;
+    color: $color;
+    font-weight: $f-weight;
+}
+
+@mixin style-paragraph($color, $f-size) {
+    color: $color;
+    font-size: $f-size;
+}
+
+%title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+@mixin m-first($width) {
+
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}

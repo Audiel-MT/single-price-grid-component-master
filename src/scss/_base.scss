@@ -1,0 +1,25 @@
+@use 'variables';
+@use 'code';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Karla', sans-serif;
+}
+
+.container {
+    padding: 70px 30px;
+    background-color: variables.$linght-gray;
+
+    @include code.m-first(580px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}

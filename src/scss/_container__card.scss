@@ -1,0 +1,107 @@
+@use 'variables';
+@use 'code';
+
+
+.container__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 665px;
+
+    > .card {
+        @include code.style-card(30px, 25px, white);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+
+        .title {
+            @extend %title;
+            color: variables.$cyan;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            @include code.text(1.6rem, variables.$bright-yellow, 700);
+            margin-bottom: 30px;
+        }
+
+        .paragraph {
+            @include code.style-paragraph(variables.$grayish-blue, 1.4rem);
+
+            @include code.m-first(580px) {
+                width: 80%;
+            }
+        }
+    }
+}
+
+.sub-container {
+
+    .card:first-child {
+        @include code.style-card(30px, 25px, variables.$cyan);
+
+        .title {
+            color: variables.$linght-gray;
+        }
+
+        .sub-title {
+            @include code.text(1.6rem, variables.$linght-gray, 100);
+            margin-bottom: 15px;
+
+            span {
+                @include code.text(2.5rem, white, 700);
+                margin-right: 10px;
+            }
+        }
+
+        .paragraph {
+            @include code.style-paragraph(white, 1.4rem);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(191, 223, 50);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+
+    .card:last-child {
+        @include code.style-card(30px, 25px, rgb(74, 190, 189));
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        .title {
+            @extend %title;
+            color: white;
+        }
+
+        .paragraph {
+            @include code.style-paragraph(variables.$linght-gray, 1.4rem);
+            list-style: none;
+        }
+    }
+
+    @include code.m-first(580px) {
+        display: flex;
+
+        .card:first-child,
+        :last-child {
+            width: 100%;
+        }
+
+        .card:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        .card:last-child {
+            border-bottom-left-radius: initial;
+            border-bottom-right-radius: 10px;
+        }
+    }
+}
